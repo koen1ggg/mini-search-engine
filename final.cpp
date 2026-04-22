@@ -6,14 +6,12 @@
 
 using namespace std;
 
-// 🔹 Base Class (Abstraction + Polymorphism)
 class Searcher {
 public:
     virtual void search(const string& filename) = 0; // Pure virtual function
     virtual ~Searcher() {} // Virtual destructor
 };
 
-// 🔹 Derived Class (Implements actual logic)
 class FileSearcher : public Searcher {
 private:
     vector<string> files;
@@ -40,7 +38,6 @@ public:
         getline(cin, keyword);
     }
 
-    // 🔹 Override base class function (Polymorphism)
     void search(const string& filename) override {
         ifstream file(filename);
         string line;
